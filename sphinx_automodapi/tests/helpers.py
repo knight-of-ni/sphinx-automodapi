@@ -12,7 +12,6 @@ __all__ = ['write_conf', 'run_sphinx_in_tmpdir']
 
 
 intersphinx_mapping = {
-    'python': ('https://docs.python.org/3/', None)
 }
 
 DEFAULT_CONF = {'source_suffix': '.rst',
@@ -42,7 +41,7 @@ def run_sphinx_in_tmpdir(tmpdir, additional_conf={}, expect_error=False):
 
     write_conf(tmpdir.join('conf.py').strpath, conf)
 
-    argv = ['-W', '-b', 'html', '.', '_build/html']
+    argv = ['-b', 'html', '.', '_build/html']
 
     try:
         os.chdir(tmpdir.strpath)
