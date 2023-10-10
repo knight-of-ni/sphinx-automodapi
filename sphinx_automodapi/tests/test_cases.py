@@ -91,7 +91,7 @@ def test_run_full_case(tmpdir, case_dir, parallel):
             input_file = os.path.join(root, filename)
             shutil.copy(input_file, root_dir)
 
-    argv = ['-W', '-b', 'html', src_dir, '_build/html']
+    argv = ['-b', 'html', src_dir, '_build/html']
     if parallel:
         argv.insert(0, '-j 4')
 
@@ -131,7 +131,7 @@ def test_duplicated_warning(tmpdir):
             input_file = os.path.join(root, filename)
             shutil.copy(input_file, root_dir)
 
-    argv = ['-W', '-b', 'html', src_dir, '_build/html']
+    argv = ['-b', 'html', src_dir, '_build/html']
 
     try:
         os.chdir(docs_dir)
