@@ -96,6 +96,7 @@ def test_run_full_case(tmpdir, case_dir, parallel):
         argv.insert(0, '-j 4')
 
     try:
+        os.environ["PYTHONWARNINGS"] = ""
         os.chdir(docs_dir)
         status = build_main(argv=argv)
     finally:
@@ -134,6 +135,7 @@ def test_duplicated_warning(tmpdir):
     argv = ['-W', '-b', 'html', src_dir, '_build/html']
 
     try:
+        os.environ["PYTHONWARNINGS"] = ""
         os.chdir(docs_dir)
         status = build_main(argv=argv)
     finally:

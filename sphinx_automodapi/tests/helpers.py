@@ -45,6 +45,7 @@ def run_sphinx_in_tmpdir(tmpdir, additional_conf={}, expect_error=False):
     argv = ['-W', '-b', 'html', '.', '_build/html']
 
     try:
+        os.environ["PYTHONWARNINGS"] = ""
         os.chdir(tmpdir.strpath)
         status = build_main(argv=argv)
     finally:
